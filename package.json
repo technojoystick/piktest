@@ -1,0 +1,26 @@
+{
+  "name": "piktest",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "node-less-chokidar": "^0.1.2",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-form": "^7.1.2",
+    "redux-form-website-template": "0.0.80"
+  },
+  "scripts": {
+    "start": "npm run build-css && run-p -ncr watch-css start-js",
+    "start-js": "react-scripts start",
+    "build": "run-s -n build-css build-js",
+    "build-js": "react-scripts build",
+    "test": "run-s -n build-css test-js",
+    "test-js": "react-scripts test --env=jsdom",
+    "build-css": "node-less-chokidar public/ src/",
+    "watch-css": "node-less-chokidar public/ src/  --watch"
+  }
+}
