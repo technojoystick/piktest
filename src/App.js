@@ -41,7 +41,6 @@ class SimpleForm extends Component {
   }
 
   textAreaChange = (e) => {
-    console.dir(e.currentTarget);
     const { scrollHeight, clientHeight } = e.currentTarget;
     if ( scrollHeight > clientHeight ) {
       this.setState({textAreaRows: this.state.textAreaRows + 1});
